@@ -875,6 +875,8 @@ h3 {
   width: min(380px, 100%);
   padding: 18px;
   text-align: left;
+  animation: showcaseCenterFloat 6s ease-in-out infinite;
+  transform-origin: center;
 }
 
 .showcase-badges {
@@ -967,11 +969,15 @@ h3 {
 
 .orbit-left {
   left: 0;
+  animation: showcaseLeftDrift 7s ease-in-out infinite;
+  transform-origin: center;
 }
 
 .orbit-right {
   right: 0;
   transform: rotate(11deg);
+  animation: showcaseRightDrift 7s ease-in-out infinite;
+  transform-origin: center;
 }
 
 .project-orbit span,
@@ -987,6 +993,36 @@ h3 {
   margin: 18px 0 8px;
   color: var(--ink);
   font-size: 14px;
+}
+
+@keyframes showcaseCenterFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-0.8deg);
+  }
+}
+
+@keyframes showcaseLeftDrift {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(-11deg);
+  }
+  50% {
+    transform: translateX(18px) translateY(-12px) rotate(-7deg);
+  }
+}
+
+@keyframes showcaseRightDrift {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(11deg);
+  }
+  50% {
+    transform: translateX(-18px) translateY(12px) rotate(7deg);
+  }
 }
 
 .table-list {
@@ -1262,7 +1298,12 @@ h3 {
   .project-orbit {
     position: static;
     width: 100%;
+    animation: none;
     transform: none;
+  }
+
+  .showcase-main {
+    animation: none;
   }
 
   .project-showcase {
@@ -1276,5 +1317,13 @@ h3 {
 
   .github-dots {
     grid-template-columns: repeat(24, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-main,
+  .orbit-left,
+  .orbit-right {
+    animation: none;
   }
 }
