@@ -115,13 +115,14 @@
           <p class="eyebrow">02 — projects</p>
           <a href="https://github.com/rowenautomation/obsidian" target="_blank" rel="noreferrer">all projects →</a>
         </div>
-        <div class="project-showcase tilt-card">
-          <div class="project-orbit orbit-left">
+        <div class="project-showcase tilt-card" data-project-showcase>
+          <button class="project-nav project-prev" type="button" aria-label="Previous project" data-project-prev>‹</button>
+          <div class="project-orbit orbit-left" data-project-left>
             <span>creative ai</span>
             <strong>AI video creation</strong>
             <small>short-form visuals</small>
           </div>
-          <article class="showcase-main">
+          <article class="showcase-main" aria-live="polite" data-project-main>
             <div class="showcase-badges">
               <span>#1 ecommerce app</span>
               <span>under development</span>
@@ -141,11 +142,13 @@
               <span>UI Design</span>
             </div>
           </article>
-          <div class="project-orbit orbit-right">
+          <div class="project-orbit orbit-right" data-project-right>
             <span>personal site</span>
             <strong>Portfolio website</strong>
             <small>SAP, AI, web work</small>
           </div>
+          <button class="project-nav project-next" type="button" aria-label="Next project" data-project-next>›</button>
+          <p class="project-hint">swipe / drag / click side cards</p>
         </div>
       </section>
 
@@ -290,6 +293,6 @@
       </section>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260701-project-carousel"></script>
   </body>
 </html>

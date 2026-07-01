@@ -859,6 +859,8 @@ h3 {
   min-height: 330px;
   place-items: center;
   padding: 20px 0 10px;
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .showcase-main,
@@ -963,6 +965,7 @@ h3 {
   min-height: 150px;
   padding: 22px;
   color: var(--muted);
+  cursor: pointer;
   font-family: var(--mono);
   transform: rotate(-11deg);
 }
@@ -995,6 +998,59 @@ h3 {
   font-size: 14px;
 }
 
+.project-nav {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 22px;
+  transform: translateY(-50%);
+  transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.project-nav:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.project-prev {
+  left: 18px;
+}
+
+.project-next {
+  right: 18px;
+}
+
+.project-hint {
+  position: absolute;
+  right: 0;
+  bottom: -28px;
+  margin: 0;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-showcase.is-next .showcase-main {
+  animation: projectSwapNext 280ms ease-out, showcaseCenterFloat 6s ease-in-out 280ms infinite;
+}
+
+.project-showcase.is-prev .showcase-main {
+  animation: projectSwapPrev 280ms ease-out, showcaseCenterFloat 6s ease-in-out 280ms infinite;
+}
+
 @keyframes showcaseCenterFloat {
   0%,
   100% {
@@ -1002,6 +1058,28 @@ h3 {
   }
   50% {
     transform: translateY(-10px) rotate(-0.8deg);
+  }
+}
+
+@keyframes projectSwapNext {
+  0% {
+    opacity: 0;
+    transform: translateX(42px) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes projectSwapPrev {
+  0% {
+    opacity: 0;
+    transform: translateX(-42px) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
   }
 }
 
@@ -1308,6 +1386,29 @@ h3 {
 
   .project-showcase {
     gap: 14px;
+    padding-bottom: 44px;
+  }
+
+  .project-nav {
+    top: auto;
+    bottom: 0;
+    transform: none;
+  }
+
+  .project-nav:hover {
+    transform: scale(1.06);
+  }
+
+  .project-prev {
+    left: calc(50% - 44px);
+  }
+
+  .project-next {
+    right: calc(50% - 44px);
+  }
+
+  .project-hint {
+    display: none;
   }
 
   .cert-grid,
@@ -1323,7 +1424,9 @@ h3 {
 @media (prefers-reduced-motion: reduce) {
   .showcase-main,
   .orbit-left,
-  .orbit-right {
+  .orbit-right,
+  .project-showcase.is-next .showcase-main,
+  .project-showcase.is-prev .showcase-main {
     animation: none;
   }
 }
