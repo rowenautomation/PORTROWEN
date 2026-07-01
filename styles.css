@@ -580,6 +580,22 @@ h3 {
   object-fit: cover;
 }
 
+.video-placeholder {
+  align-items: center;
+  aspect-ratio: 16 / 10;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0)),
+    var(--soft);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  font-family: var(--mono);
+  font-size: 12px;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .video-card h3 {
   margin-top: 14px;
 }
