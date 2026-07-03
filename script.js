@@ -18,7 +18,7 @@ const projectPrevButton = document.querySelector("[data-project-prev]");
 const projectNextButton = document.querySelector("[data-project-next]");
 
 const prompts = [
-  "SAP BTP destinations and identity",
+  "SAP BTP integration and platform administration",
   "SAP CTMS and CI/CD flows",
   "SAP Build Work Zone",
   "Obsidian ecommerce UI",
