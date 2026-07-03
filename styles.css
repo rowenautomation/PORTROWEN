@@ -658,6 +658,43 @@ h3 {
   max-width: 520px;
 }
 
+.contact-card {
+  display: grid;
+  max-width: 620px;
+  margin: 28px 0 4px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-card a {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  min-height: 58px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.contact-card a:hover {
+  color: var(--ink);
+  transform: translateX(4px);
+}
+
+.contact-card span {
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.contact-card strong {
+  overflow-wrap: anywhere;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+}
+
 .section-reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -1397,7 +1434,8 @@ h3 {
 
 @media (max-width: 820px) {
   .list-rows article,
-  .table-list div {
+  .table-list div,
+  .contact-card a {
     grid-template-columns: 1fr;
   }
 
