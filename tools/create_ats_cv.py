@@ -7,7 +7,7 @@ from docx.shared import Inches, Pt, RGBColor
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs" / "Rowen_Infante_ATS_CV.docx"
+OUT = ROOT / "docs" / "Rowen_Infante_CV.docx"
 
 BLACK = RGBColor(0, 0, 0)
 MUTED = RGBColor(70, 70, 70)
@@ -104,27 +104,27 @@ def create_doc():
     heading(doc, "Professional Summary")
     paragraph(
         doc,
-        "SAP industry professional at Accenture with experience in SAP BTP administration, SAP HANA, SAP Generative AI, "
-        "identity and access management, destination configuration, transport management, CI/CD, and SAP Build Work Zone. "
-        "Background includes Manufacturing Engineering from Mapua University, process engineering experience, web development, "
-        "GitHub-based project work, and AI-assisted video creation.",
+        "SAP industry professional at Accenture with experience in SAP BTP administration, SAP BTP integration, SAP HANA, "
+        "SAP Generative AI, identity and access management, roles, role collections, transport management, CI/CD, and "
+        "SAP Build Work Zone. Background includes Manufacturing Engineering from Mapua University, process engineering "
+        "experience, web development, GitHub-based project work, AI-assisted web development, and AI-assisted video creation.",
         after=6,
     )
 
     heading(doc, "Core Skills")
     paragraph(
         doc,
-        "SAP BTP, SAP HANA, SAP Generative AI, SAP CTMS, SAP CI/CD, SAP Build Work Zone, destination configuration, "
-        "destination creation, roles, role collections, identity, access management, GitHub, Next.js, Supabase, ecommerce websites, "
-        "portfolio websites, AI tools, AI video creation, web development, data analytics foundations.",
+        "SAP BTP, SAP BTP Integration, roles, role collections, identity, access management, SAP CTMS, SAP CI/CD service, "
+        "SAP Build Work Zone, SAP HANA, SAP Generative AI, GitHub, Next.js, Supabase, ecommerce UI, portfolio development, "
+        "HANA Studio, AI-assisted web development, AI-assisted video creation, short-form content experiments, visual concepts, "
+        "Higgsfield, OpenArt, Claude, ChatGPT, Gemini, Flow, data analytics foundations.",
         after=6,
     )
 
     heading(doc, "Professional Experience")
     role(doc, "SAP BTP Administrator / SAP Industry Professional", "Accenture", "Current")
     bullet(doc, "Develop and support SAP BTP administration workflows for enterprise SAP environments.")
-    bullet(doc, "Configure and create SAP BTP destinations for application and service connectivity.")
-    bullet(doc, "Support roles, role collections, identity, and access management requirements across SAP BTP services.")
+    bullet(doc, "Support SAP BTP integration, platform administration, roles, role collections, identity, and access management requirements.")
     bullet(doc, "Work with SAP CTMS, SAP CI/CD service, SAP Build Work Zone, SAP HANA, and SAP Generative AI.")
     bullet(doc, "Use GitHub and modern web development practices while building portfolio and ecommerce projects.")
 
@@ -135,14 +135,14 @@ def create_doc():
     heading(doc, "Projects")
     role(doc, "Obsidian - Skincare Ecommerce Website", "Personal Project", "Under Development")
     bullet(doc, "Built a luxury skincare ecommerce website concept with product sections, brand storytelling, reviews, cart/search navigation, and an about page.")
-    bullet(doc, "Used Next.js, Supabase, ecommerce interface design, and GitHub-based development workflow.")
+    bullet(doc, "Used Next.js, Supabase, ecommerce interface design, HANA Studio awareness, AI-assisted web development, and GitHub-based development workflow.")
 
     role(doc, "Portfolio Website", "Personal Project", "2026")
     bullet(doc, "Created a personal portfolio for SAP BTP work, certifications, web projects, and AI creative experiments.")
     bullet(doc, "Implemented a black-and-white portfolio UI inspired by clean developer portfolio patterns.")
 
     role(doc, "AI Video Creation", "Creative AI Project", "Ongoing")
-    bullet(doc, "Create AI-assisted short-form videos using AI tools, visual concepts, motion, and editing workflows.")
+    bullet(doc, "Create AI-assisted short-form videos using Higgsfield, OpenArt, Claude, ChatGPT, Gemini, Flow, visual concepts, motion, and editing workflows.")
 
     heading(doc, "Certifications")
     bullet(doc, "SAP Certified - SAP BTP Administrator")
