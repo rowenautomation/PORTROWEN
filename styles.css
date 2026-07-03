@@ -34,6 +34,39 @@ a {
   text-decoration: none;
 }
 
+button,
+a {
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 120;
+  padding: 10px 14px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--bg);
+  font-family: var(--mono);
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-18px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.skip-link:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 .cursor-dot {
   position: fixed;
   z-index: 100;
@@ -232,6 +265,9 @@ h3 {
 
 .hero-socials a,
 .hero-socials button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   border: 0;
   background: transparent;
   color: var(--muted);
@@ -258,6 +294,7 @@ h3 {
 .button {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 12px;
@@ -1003,8 +1040,8 @@ h3 {
   z-index: 4;
   top: 50%;
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -1024,11 +1061,11 @@ h3 {
 }
 
 .project-prev {
-  left: 18px;
+  left: 8px;
 }
 
 .project-next {
-  right: 18px;
+  right: 8px;
 }
 
 .project-hint {

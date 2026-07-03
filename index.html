@@ -8,9 +8,10 @@
       name="description"
       content="Portfolio of Rowen Infante, an SAP BTP Administrator building across SAP, AI, and web development."
     />
-    <link rel="stylesheet" href="styles.css?v=20260701-project-motion" />
+    <link rel="stylesheet" href="styles.css?v=20260703-uiux-pro-max" />
   </head>
   <body>
+    <a class="skip-link" href="#top">Skip to content</a>
     <div class="cursor-dot" aria-hidden="true"></div>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Rowen Infante home">Rowen</a>
@@ -115,7 +116,7 @@
           <p class="eyebrow">02 — projects</p>
           <a href="https://github.com/rowenautomation/obsidian" target="_blank" rel="noreferrer">all projects →</a>
         </div>
-        <div class="project-showcase tilt-card" data-project-showcase>
+        <div class="project-showcase tilt-card" role="region" aria-label="Featured projects carousel" tabindex="0" data-project-showcase>
           <button class="project-nav project-prev" type="button" aria-label="Previous project" data-project-prev>‹</button>
           <div class="project-orbit orbit-left" data-project-left>
             <span>creative ai</span>
@@ -234,7 +235,7 @@
             <p>Creative AI visual study. Large source file needs compression before GitHub hosting.</p>
           </article>
           <article class="video-card tilt-card">
-            <video controls preload="metadata" src="assets/videos/foundation.mp4"></video>
+            <video controls preload="metadata" src="assets/videos/foundation.mp4" aria-label="Foundation AI-assisted skincare and makeup video"></video>
             <h3>Foundation</h3>
             <p>AI-assisted skincare and makeup video concept.</p>
           </article>
@@ -293,6 +294,6 @@
       </section>
     </div>
 
-    <script src="script.js?v=20260703-btp-copy"></script>
+    <script src="script.js?v=20260703-uiux-pro-max"></script>
   </body>
 </html>

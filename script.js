@@ -207,6 +207,18 @@ projectShowcase?.addEventListener("pointercancel", () => {
   projectDragCurrent = 0;
 });
 
+projectShowcase?.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    moveProject(-1);
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    moveProject(1);
+  }
+});
+
 renderProjectShowcase();
 
 if (githubDots) {
